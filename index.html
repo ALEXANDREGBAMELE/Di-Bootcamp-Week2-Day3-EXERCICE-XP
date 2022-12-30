@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice-xp</title>
+</head>
+<body>
+    <script>
+        // EXERCICE 1
+
+            //PARTIE 1
+        const people = ["Greg", "Mary", "Devon", "James"];
+        //supression de  "Greg"  dans le tableau
+       // let retirerElement = people.splice(0,1);
+       // console.log(retirerElement);
+
+        //Remplacer "James" par "Jason" 
+        let remplacement = people.splice(3,1, "Jason");
+        //console.log(people.replace('James', 'monkey'));
+        console.log(people);
+
+        //Écrivez du code pour ajouter votre nom à la fin du peopletableau.
+        let ajouterNom = people.push('Alexandre');
+        console.log(people)
+
+        //index of de Mary
+        console.log(people.indexOf('Mary'));
+        
+        // copie des certtains elel=ments du tableau
+        console.log(people.slice(1, -1))
+
+        //le code qui renvoie l'index de Foo
+        console.log(people.indexOf('Foo'));
+        //Explication : il renvoie -1 car l'élément "Foo" n'existe pas dans le tableau;
+
+        // La valeur du dernier element du tableau
+        console.log(people.length)
+        let last = "Alexandre";
+        console.log(last);
+        console.log(people.indexOf(last))
+        
+        //On constat que l'index du dernier élément du tableau est égale au dimension du tableau - 1
+        
+        //Partie 2
+        //parcourir et afficher les éléments du tableau people
+        for(let i = 0 ; i<=people.length; i++){
+            console.log(people[i])
+        }
+        //parcourir et afficher les éléments du tableau people et break
+        for(let i = 0 ; i<=people.length; i++){
+            if(people[i]== "Jason")
+            console.log(people[i])
+            break
+        }
+
+        // ----------EXERCICE 2----------
+        //couler prefere
+        colors = ['blue', 'yello', 'aqua','red', 'orange']
+        for(let i = 0 ; i < colors.length; i++){
+            console.log("My choice n°"+i+ " : " + colors[i]);
+        }
+
+        let rang = ['st', 'nd','rd','th', 'th'] 
+        for(let i = 0 ; i < colors.length; i++){
+            console.log(i+1+rang[i]+ " choice : " + colors[i]);
+        }
+        // verifier 1O fois
+      
+         // ----------EXERCICE 3----------
+        let i = 0;
+        while(i<=10){
+            let nombre = prompt("Entrer une valeur");
+            let type = typeof nombre;
+            console.log(type);
+            console.log("le compteur est à " + i++);
+        }
+
+
+       //-------EXERCICE 4
+
+       const building = {
+        numberOfFloors: 4,
+        numberOfAptByFloor: {
+            firstFloor: 3,
+            secondFloor: 4,
+            thirdFloor: 9,
+            fourthFloor: 2,
+        },
+        nameOfTenants: ["Sarah", "Dan", "David"],
+        numberOfRoomsAndRent:  {
+            sarah: [3, 990],
+            dan:  [4, 1000],
+            david: [1, 500],
+        },
+    }
+    console.log(building.numberOfFloors)
+
+    </script>
+</body>
+</html>
