@@ -13,13 +13,16 @@
             //PARTIE 1
         const people = ["Greg", "Mary", "Devon", "James"];
         //supression de  "Greg"  dans le tableau
-       // let retirerElement = people.splice(0,1);
-       // console.log(retirerElement);
+        people
+
+
+        let retirerElement = people.splice(0,1);
+        console.log(retirerElement);
 
         //Remplacer "James" par "Jason" 
-        let remplacement = people.splice(3,1, "Jason");
+       // let remplacement = people.splice(3,1, "Jason");
         //console.log(people.replace('James', 'monkey'));
-        console.log(people);
+        console.log(people.splice(2,1, "Jason"));
 
         //Écrivez du code pour ajouter votre nom à la fin du peopletableau.
         let ajouterNom = people.push('Alexandre');
@@ -56,7 +59,7 @@
         }
 
         // ----------EXERCICE 2----------
-        //couler prefere
+        //couleur preferée
         colors = ['blue', 'yello', 'aqua','red', 'orange']
         for(let i = 0 ; i < colors.length; i++){
             console.log("My choice n°"+i+ " : " + colors[i]);
@@ -69,15 +72,19 @@
         // verifier 1O fois
       
          // ----------EXERCICE 3----------
-        let i = 0;
-        while(i<=10){
-            let nombre = prompt("Entrer une valeur");
-            let type = typeof nombre;
-            console.log(type);
-            console.log("le compteur est à " + i++);
+         /* une boucle qui verifie la valeur entrer par l'utilisateur
+            si cette valeur != number
+         */
+        let cpt = 0;
+       let nombreEntrer = prompt("Enter a number");
+       if( typeof nombreEntrer === 'string'){
+        while(cpt < 2){
+            nombreEntrer = prompt("Enter a number");
+            cpt ++ ;
         }
-
-
+       
+      
+    }
        //-------EXERCICE 4
 
        const building = {
@@ -95,8 +102,136 @@
             david: [1, 500],
         },
     }
-    console.log(building.numberOfFloors)
 
-    </script>
+    /*
+    const building = {
+    numberOfFloors: 4,
+    numberOfAptByFloor: {
+        firstFloor: 3,
+        secondFloor: 4,
+        thirdFloor: 9,
+        fourthFloor: 2,
+    },
+    nameOfTenants: ["Sarah", "Dan", "David"],
+    numberOfRoomsAndRent:  {
+        sarah: [3, 990],
+        dan:  [4, 1000],
+        david: [1, 500],
+    },
+}
+
+
+Revue Sur Les Objets
+Copiez et collez l'objet ci-dessus dans votre fichier Javascript.
+
+Console.log le nombre d'étages du bâtiment.
+
+Console.log combien d'appartements sont aux étages 1 et 3.
+
+Console.log le nom du deuxième locataire et le nombre de pièces qu'il possède dans son appartement.
+
+Vérifiez si la somme du loyer de Sarah et de David est supérieure au loyer de Dan. Si c'est le cas, augmentez le loyer de Dan à 1200.
+
+
+
+
+*/
+    /*----- console log le nombre d'etage du batiment-----*/
+    console.log(building.numberOfFloors)
+    /*Console.log le nombre d'étages du bâtiment 1 et 3.*/
+    console.log(building.numberOfAptByFloor.firstFloor)
+
+    console.log(building.numberOfAptByFloor.thirdFloor)
+
+    /* Console.log le nom du deuxième locataire et le nombre de pièces qu'il possède dans son appartement.*/
+    console.log(building.nameOfTenants[1],building.numberOfRoomsAndRent.dan[0])
+
+    /*Vérifiez si la somme du loyer de Sarah et de David est supérieure au loyer de Dan. Si c'est le cas, augmentez le loyer de Dan à 1200.*/
+    const buildingRents = building.numberOfRoomsAndRent;
+
+    if(buildingRents.sarah[1] + buildingRents.david[1] > buildingRents.dan[1]) buildingRents.dan[1] =  1200;
+
+
+
+
+
+
+  /*  🌟 Exercice 5 : Famille
+Des Instructions
+Créez un objet appelé famille avec quelques paires clé-valeur.
+A l' aide d'une for inboucle, console.log les clés de l'objet.
+À l' aide d'une for inboucle, console.log les valeurs de l'objet.
+*/
+
+/*Créez un objet appelé famille avec quelques paires clé-valeur.*/
+const Famille = {
+    girls:4,
+    boys:3,
+    son:2,
+    daughter:3
+}
+//A l' aide d'une for inboucle, console.log les clés de l'objet.
+for(const item in Famille){
+    console.log(`${item}`);
+}
+
+//À l' aide d'une for inboucle, console.log les valeurs de l'objet.
+for(const item in Famille){
+    console.log(`${Famille[item]}`);
+}
+
+/*S
+
+Exercice 6 : Rodolphe
+Des Instructions
+const details = {
+  my: 'name',
+  is: 'Rudolf',
+  the: 'raindeer'
+}
+Étant donné l'objet ci-dessus et en utilisant un for loop, console.log "mon nom est Rudolf le raindeer"
+*/
+const details = {
+    my: 'name',
+    is: 'Rudolf',
+    the: 'raindeer'
+  }
+
+ // Étant donné l'objet ci-dessus et en utilisant un for loop, console.log "mon nom est Rudolf le raindeer"
+const sentence = [];
+for (const key in details){
+    sentence.push(`${key} ${details[key] }`);
+    
+}
+console.log(sentence.join(''));
+  
+
+
+
+/*
+
+Exercice 7 : Groupe Secret
+Des Instructions
+const names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
+Un groupe d'amis a décidé de créer une société secrète. Le nom de la société sera la première lettre de chacun de leurs noms triés par ordre alphabétique.
+Indice : une chaîne est un tableau de lettres
+Console.log le nom de leur société secrète. La sortie doit être "ABJKPS"
+*/
+
+const names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
+const nameFactorie = 0;
+ for(let i in names){
+    for(let j in i){
+        nameFactorie = names[i][0]
+    }
+    nameFactorie++;
+}
+console.log(nameFactorie)
+
+</script>
+
+
+
+
 </body>
 </html>
