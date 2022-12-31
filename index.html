@@ -76,15 +76,22 @@
             si cette valeur != number
          */
         let cpt = 0;
-       let nombreEntrer = prompt("Enter a number");
-       if( typeof nombreEntrer === 'string'){
-        while(cpt < 2){
-            nombreEntrer = prompt("Enter a number");
-            cpt ++ ;
+        let nombreEntrer = prompt("Enter a number");
+        nombreEntrer = parseInt(nombreEntrer)
+
+        if( typeof nombreEntrer != "string"){
+        
+            console.log("bien c'est un nombre") 
         }
-       
-      
-    }
+        else{
+            while(cpt < 10){
+                nombreEntrer = prompt("Enter a number");
+                cpt ++ ;
+                if( typeof nombreEntrer != "string")
+                break;
+            }
+        console.log("is not number ")
+        }
        //-------EXERCICE 4
 
        const building = {
@@ -218,20 +225,20 @@ Indice : une chaîne est un tableau de lettres
 Console.log le nom de leur société secrète. La sortie doit être "ABJKPS"
 */
 
-const names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
-const nameFactorie = 0;
- for(let i in names){
-    for(let j in i){
-        nameFactorie = names[i][0]
-    }
-    nameFactorie++;
-}
-console.log(nameFactorie)
+let names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
+let nameFactorie = [];
+ //for(let i in names){
+   // for(let i = 0 ; i <= names.length; i++){
+    
+   // nameFactorie=names[i][0]
+   // }
+    // console.log(nameFactorie)   
+   
+   // nameFactorie++;
+//}
+
 
 </script>
-
-
-
 
 </body>
 </html>
